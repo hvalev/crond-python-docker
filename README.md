@@ -56,7 +56,7 @@ variable = os.environ['variable']
 ## Python
 When using python scripts, make sure you properly utilize try-catch-finally blocks and properly dispose of variables. Otherwise, if your script throws an error, object instances won't be properly disposed of and the container will eventually eat away your host-os memory. Make sure you also properly exit your shell scripts.
 
-### Putting resource limits on the container
+## Putting resource limits on the container
 You may want to set some resource restrictions on your container in docker-compose. This may ensure that bugs in your scripts won't bring down your docker host, although in my experience this wasn't a guarantee.
 ```
 deploy:
