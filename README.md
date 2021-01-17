@@ -1,8 +1,15 @@
-# crond docker container including python, selenium, rsync and notifications using apprise
-Containerized crond with support for python, selenium and rsync for backups or other scripts.
-Integrated notifications for various platforms such as telegram, discord, etc through [apprise](https://github.com/caronc/apprise).
+# Crond docker container with python and notifications
 
-The benefits of using this container is that it allows you to run it separate of your host. The setup allows you to hotswap scripts while the container is running and you can choose which volumes to mount and expose to the container.
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/hvalev/crond-python-docker/ci)
+![Docker Pulls](https://img.shields.io/docker/pulls/hvalev/crond-python-selenium-apprise)
+![Docker Stars](https://img.shields.io/docker/stars/hvalev/crond-python-selenium-apprise)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/hvalev/crond-python-selenium-apprise)
+
+Containerized crond with support for python, selenium and rsync, wget and git for backups or scraping.
+Integrated notifications for various platforms such as telegram, discord, webhooks and others through [apprise](https://github.com/caronc/apprise).
+
+Besides keeping your host os clean by dockerizing your cron scripts, this setup also allows you to hotswap scripts while the container is running.
+To control which folders are accessible from the container, expose them as volumes in your ```docker run``` or ```docker-compose``` commands.
 
 ## How to deploy
 By default startup.sh defines cron intervals corresponding to the following folder structure, which needs to be created on the host (please adjust paths accoridngly):
