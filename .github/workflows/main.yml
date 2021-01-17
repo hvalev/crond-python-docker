@@ -7,7 +7,7 @@ on:
     - 'README.md'
 
 env:
-  BUILD_VERSION: "0.1"
+  BUILD_VERSION: "0.2"
 
 jobs:
   buildx:
@@ -32,7 +32,7 @@ jobs:
           docker buildx build --push \
           --tag hvalev/crond-python-selenium-apprise:latest \
           --tag hvalev/crond-python-selenium-apprise:${BUILD_VERSION} \
-          --platform linux/amd64,linux/arm64,linux/arm/v7 .
+          --platform linux/amd64,linux/arm64 .
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v2
         env:
